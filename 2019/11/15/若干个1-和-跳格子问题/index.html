@@ -10,16 +10,16 @@
 <title>若干个1 和 跳格子问题 - feecha&#39;s Blogs</title>
 
 
-    <meta name="description" content="期中考试摸了，遇到两个奇怪的问题。  第一个问题 对任意n，如果n对2的余数和n对5的余数不为零，则存在n的倍数为若干个1。 123456789101112131415161718192021222324252627282930313233#include &amp;lt;stdio.h&amp;gt;int len(long long n);int main() &amp;#123;	int n;	scanf(&quot;%d&quot;">
+    <meta name="description" content="期中考试摸了，遇到两个奇怪的问题。  若干个1和跳楼梯">
 <meta name="keywords" content="Question">
 <meta property="og:type" content="article">
 <meta property="og:title" content="若干个1 和 跳格子问题">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;15&#x2F;%E8%8B%A5%E5%B9%B2%E4%B8%AA1-%E5%92%8C-%E8%B7%B3%E6%A0%BC%E5%AD%90%E9%97%AE%E9%A2%98&#x2F;index.html">
 <meta property="og:site_name" content="feecha&#39;s Blogs">
-<meta property="og:description" content="期中考试摸了，遇到两个奇怪的问题。  第一个问题 对任意n，如果n对2的余数和n对5的余数不为零，则存在n的倍数为若干个1。 123456789101112131415161718192021222324252627282930313233#include &amp;lt;stdio.h&amp;gt;int len(long long n);int main() &amp;#123;	int n;	scanf(&quot;%d&quot;">
+<meta property="og:description" content="期中考试摸了，遇到两个奇怪的问题。  若干个1和跳楼梯">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-15T14:53:14.865Z">
+<meta property="og:updated_time" content="2019-11-16T15:29:27.805Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
 
@@ -141,7 +141,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 295 words)
+                    2 minutes read (About 303 words)
                 </span>
                 
                 
@@ -156,6 +156,9 @@
         <div class="content">
             <p>期中考试摸了，遇到两个奇怪的问题。</p>
 <hr>
+<p>若干个1和跳楼梯</p>
+<a id="more"></a>
+
 <p>第一个问题</p>
 <p>对任意n，如果n对2的余数和n对5的余数不为零，则存在n的倍数为若干个1。</p>
 <figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">len</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> n)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">	<span class="hljs-keyword">int</span> n;</span><br><span class="line">	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;n);</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> i = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">if</span> (n % <span class="hljs-number">2</span> != <span class="hljs-number">0</span> &amp;&amp; n % <span class="hljs-number">5</span> != <span class="hljs-number">0</span>) &#123;</span><br><span class="line">		<span class="hljs-keyword">while</span> (i % n != <span class="hljs-number">0</span>) &#123;</span><br><span class="line">			i *= <span class="hljs-number">10</span>;</span><br><span class="line">			i += <span class="hljs-number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>, len(i));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">len</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="hljs-keyword">int</span> length = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">if</span> (n &gt;= <span class="hljs-number">0</span> &amp;&amp; n &lt; <span class="hljs-number">10</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;</span><br><span class="line">	<span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">0</span>) &#123;</span><br><span class="line">		length++;</span><br><span class="line">		n /= <span class="hljs-number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">return</span> length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
