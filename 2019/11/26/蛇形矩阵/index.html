@@ -11,6 +11,7 @@
 
 
     <meta name="description" content="#蛇形矩阵# 问题描述：蛇形矩阵是一个nn的矩阵，将整数1到nn按照蛇形的顺序装入一个 n*n 的蛇形矩阵中，如样例所示分别为5阶和10阶蛇形矩阵：">
+<meta name="keywords" content="Question">
 <meta property="og:type" content="article">
 <meta property="og:title" content="蛇形矩阵">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;26&#x2F;%E8%9B%87%E5%BD%A2%E7%9F%A9%E9%98%B5&#x2F;index.html">
@@ -18,7 +19,7 @@
 <meta property="og:description" content="#蛇形矩阵# 问题描述：蛇形矩阵是一个nn的矩阵，将整数1到nn按照蛇形的顺序装入一个 n*n 的蛇形矩阵中，如样例所示分别为5阶和10阶蛇形矩阵：">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-26T11:23:50.653Z">
+<meta property="og:updated_time" content="2019-11-26T11:25:40.018Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
 
@@ -162,6 +163,15 @@
 <hr>
 <p>这题的关键在蛇形上，千万不能暴力的一点点模拟，否则判断冗长且易错。不断的模拟这个过程，发现这玩意爬的方向和所在对角线的奇偶性有关；其次，每个对角线上数字的个数也于对角线的序号有关。这样便能写出上面那个三角形。而这上下是有镜像关系的，故直接对称的来一次即可解决问题。</p>
 <figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> matrix[<span class="hljs-number">105</span>][<span class="hljs-number">105</span>];</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fill</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="hljs-keyword">int</span> n, i, j;</span><br><span class="line">	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;n);</span><br><span class="line"></span><br><span class="line">	<span class="hljs-built_in">fill</span>(n);</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n ; i++) &#123;</span><br><span class="line">		<span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; n<span class="hljs-number">-1</span>; j++) &#123;</span><br><span class="line">			<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, matrix[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, matrix[i][n - <span class="hljs-number">1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fill</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="hljs-keyword">int</span> i, j;</span><br><span class="line">	<span class="hljs-keyword">int</span> p = <span class="hljs-number">1</span>, <span class="hljs-built_in">max</span> = n * n;</span><br><span class="line">	<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n ; i++) &#123;</span><br><span class="line">		<span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt;= i; j++) &#123;</span><br><span class="line">			<span class="hljs-keyword">if</span> (i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) </span><br><span class="line">				matrix[j][i - j] = p++;</span><br><span class="line">			<span class="hljs-keyword">else</span> </span><br><span class="line">				matrix[i - j][j] = p++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n ; i++) &#123;</span><br><span class="line">		<span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt;= i; j++) &#123;</span><br><span class="line">			<span class="hljs-keyword">if</span> (i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) </span><br><span class="line">				matrix[n - <span class="hljs-number">1</span> - j][n - <span class="hljs-number">1</span> - i + j] = <span class="hljs-built_in">max</span>--;</span><br><span class="line">			<span class="hljs-keyword">else</span> </span><br><span class="line">				matrix[n - <span class="hljs-number">1</span> - i + j][n - <span class="hljs-number">1</span> - j] = <span class="hljs-built_in">max</span>--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Question/" rel="tag">Question</a>
+                </div>
+            </div>
         </div>
         
         
@@ -413,7 +423,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Question/">
                         <span class="tag">Question</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -515,7 +525,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Question/">
                         <span class="tag">Question</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
