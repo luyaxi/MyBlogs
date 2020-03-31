@@ -7,15 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Archives: 2019 - feecha&#39;s Blogs</title>
+<title>多文件编译问题 - feecha&#39;s Blogs</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="feecha&#39;s Blogs">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;index.html">
+    <meta name="description" content="在c语言中，由于各编译器的差别，导致对多文件编译的格式支持出现问题。">
+<meta name="keywords" content="Information">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多文件编译问题">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;31&#x2F;%E5%A4%9A%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98&#x2F;index.html">
 <meta property="og:site_name" content="feecha&#39;s Blogs">
+<meta property="og:description" content="在c语言中，由于各编译器的差别，导致对多文件编译的格式支持出现问题。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
+<meta property="og:updated_time" content="2020-03-31T03:04:17.307Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
 
@@ -75,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="feecha&#39;s Blogs" height="28">
+                <img src="/images/logo.svg" alt="多文件编译问题" height="28">
             
             </a>
         </div>
@@ -125,60 +129,87 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        2019
-        </h3>
-        <div class="timeline">
+<div class="card">
+    
+    <div class="card-content article ">
         
-            <article class="media">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-31T02:25:21.000Z">2020-03-31</time>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-12-21T08:43:02.000Z">2019-12-21</time>
-                        <a href="/2019/12/21/%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">常用函数</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-11-26T11:06:08.000Z">2019-11-26</time>
-                        <a href="/2019/11/26/%E8%9B%87%E5%BD%A2%E7%9F%A9%E9%98%B5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">蛇形矩阵</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 551 words)
+                </span>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-11-15T13:56:15.000Z">2019-11-15</time>
-                        <a href="/2019/11/15/%E8%8B%A5%E5%B9%B2%E4%B8%AA1,%E8%B7%B3%E6%A0%BC%E5%AD%90%E9%97%AE%E9%A2%98,%E7%8E%A9%E6%B8%B8%E6%88%8F%E4%BA%8C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">若干个1,跳格子问题,玩游戏二</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
+                
+            </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                多文件编译问题
+            
+        </h1>
+        <div class="content">
+            <p>在c语言中，由于各编译器的差别，导致对多文件编译的格式支持出现问题。</p>
+<a id="more"></a>
+
+<p>这学期老师让我们开发一个模拟cpu的程序，本想着多写几个模块最后拼起来，各种include之后报错几百个。当成差点吐血。后来研究了一下，发现是编译器支持的问题。<br>我先是用vscode和mingw64简单编译了一下，移植到visual studio时出现问题。</p>
+<p>经实验，vscode和mingw64支持的多文件编译格式是这样的。</p>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//a.h文件</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> A_H </span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> A_H </span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> len 64</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">a</span></span></span><br><span class="line"><span class="hljs-class">&#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> x[len];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printa</span><span class="hljs-params">(struct a* sa)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,sa-&gt;x[<span class="hljs-number">0</span>]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//b.h文件</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> B_H</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> B_H</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"a.h"</span></span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">b</span></span></span><br><span class="line"><span class="hljs-class">&#123;</span></span><br><span class="line">    <span class="hljs-keyword">char</span> x[len*<span class="hljs-number">4</span>];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printb</span><span class="hljs-params">(struct a* sa,struct b* sb)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    printa(sa);</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%c"</span>,sb-&gt;x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<p>也就是说，头文件中的宏定义，函数，结构体都是通用的。在b.h中包含a.h后，编译器在b.h中能识别到a.h中的所有内容。</p>
+<p>再来看visual studio的情况。报错LNK 2005，查了下官方的说明，发现其不支持vscode+mingw64的编译方式。若想在其中使用多文件编译，要这么写:</p>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//a.h文件</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> once</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> len 64</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">a</span></span></span><br><span class="line"><span class="hljs-class">&#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> x[len];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printa</span><span class="hljs-params">(struct a* sa)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//a.c文件</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"a.h"</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printa</span><span class="hljs-params">(struct a* sa)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,sa-&gt;x[<span class="hljs-number">0</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//b.h文件</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> once</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"a.h"</span></span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">b</span></span></span><br><span class="line"><span class="hljs-class">&#123;</span></span><br><span class="line">    <span class="hljs-keyword">char</span> x[len*<span class="hljs-number">4</span>];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printb</span><span class="hljs-params">(struct a* sa,struct b* sb)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//b.c文件</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"b.h"</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printb</span><span class="hljs-params">(struct a* sa,struct b* sb)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    printa(sa);</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%c"</span>,sb-&gt;x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出，和上面的区别就是函数的实现要和声明分开，实现要放到和所在头文件同名的.c文件中，编译器会自动链接函数。<br>其中</p>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> once</span></span><br></pre></td></tr></table></figure>
+<p>换成</p>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> xx </span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> xx </span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<p>也可。同样起到避免重复编译的情况。</p>
+<p>总结一下，vscode+mingw64不支持自动链接函数，可以把函数的定义写在头文件中，而visualStudio支持，并且强制要把函数的声明和定义分开放在两个文件中。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Information/" rel="tag">Information</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/12/21/%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/">
+                <span class="level-item">常用函数</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
     </div>
 </div>
 
@@ -670,7 +701,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="feecha&#39;s Blogs" height="28">
+                    <img src="/images/logo.svg" alt="多文件编译问题" height="28">
                 
                 </a>
                 <p class="is-size-7">
